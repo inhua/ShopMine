@@ -50,7 +50,7 @@ public class MineViewController: BaseViewController {
     }
 
     private func goLogin() {
-        let loginVC = CTMediator.shared.loginViewController() ?? UIViewController()
+        let loginVC = CTMediator.shared.performTarget("Login", action: "viewController", params: nil) as? UIViewController ?? UIViewController()
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true)
     }
