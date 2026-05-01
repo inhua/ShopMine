@@ -1,13 +1,8 @@
-// ShopMineRouteRegistrar.swift - ShopMine 路由自注册
+// ShopMineRouteRegistrar.swift - ShopMine 路由注册
 import ShopRouter
+import UIKit
 
 public final class ShopMineRouteRegistrar: NSObject, MTRouteRegistrable {
-    override public class func initialize() {
-        super.initialize()
-        guard self === ShopMineRouteRegistrar.self else { return }
-        registerRoutes()
-    }
-
     public static func registerRoutes() {
         MTRouter.shared.register(RouterPath.Mine.main)    { _ in MineViewController() }
         MTRouter.shared.register(RouterPath.Mine.address) { _ in UIViewController() }
